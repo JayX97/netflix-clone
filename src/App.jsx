@@ -1,25 +1,61 @@
 import { useState, useEffect } from 'react';
-import Home from "./Home";
+import List from "./List";
 import Details from "./Details";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   const [animeList, setAnimeList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selection, setSelection] = useState(null); // selection via anime object clicked in List component
 
   // fetch list
   useEffect(() => {
-    const fetchAnime = async () => {
-      const response = await fetch('https://api.jikan.moe/v4/anime');
-      const data = await response.json();
-      setAnimeList(data);
+    let ignore = false; // allows for the fetch to run once on strict mode
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch('https://api.jikan.moe/v4/anime');
+        
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!ignore) setAnimeList(data); // only set data on latest mount (for strict mode)
+
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     }
-    fetchAnime();
+    
+    fetchData();
+
+    return () => ignore = true;
   }, []);
 
   return (
     <div id='app'>
-      <Home list={animeList} />
-      <Details />
+      <div id='welcome-section'>
+        <h1>Anime Max</h1>
+        <h3>Welcome to Anime Max! Please enter name of show or movie to access our vast library.</h3>
+        <div id='search'>
+          <input type="'text"></input>
+          <button>Search</button>
+        </div>
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<List loading={loading} error={error} list={animeList} onSelection={setSelection} />} />
+          <Route path="/details" element={<Details anime={selection} onReturn={setSelection} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
