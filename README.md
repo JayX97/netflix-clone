@@ -13,6 +13,8 @@ API used for app -> Jikan API (filters each query to 25 entries per page), text 
 
 Fetch API to fetch data from Jikan API with error handling (and using an ignore flag to ensure the app fetches once during strict mode).
 
+SearchBar component will render search bar used for fetching data via search query.
+
 List component will render loading and error states from fetch.
 
 Detail component will render anime selection from current selection state (resets state to null when navigating back to List component)
