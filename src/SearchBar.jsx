@@ -10,6 +10,7 @@ const SearchBar = ({ onSearch }) => {
   
   return (
     <div id='search'>
+      <h3>Welcome to Anime Max! Please enter name of show or movie to access our vast library.</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

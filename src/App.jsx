@@ -9,12 +9,21 @@ function App() {
   const [animeList, setAnimeList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selection, setSelection] = useState(null); // selection via anime object clicked in List component
+  const [selection, setSelection] = useState(() => { // * LAZY INITIALIZER FUNCTION TO STORE SELECTION THROUGH REFRESHES USING localStorage *
+    const anime = localStorage.getItem('selection');
+    
+    return anime ? JSON.parse(anime) : null;
+  }); // selection via anime object clicked in List component
   const [query, setQuery] = useState("");
 
   const baseUrl = "https://api.jikan.moe/v4/anime"; // will use search input state variable as param query
   const queryParam = query.trim() === "" ? `?order_by=${encodeURIComponent("popularity")}`
                                         : `?q=${encodeURIComponent(query)}`;
+                                        
+  // * PRESERVE SELECTION THROUGH REFRESH *
+  useEffect(() => {
+    localStorage.setItem('selection', JSON.stringify(selection));
+  }, [selection]);
 
   // fetch list
   useEffect(() => {
@@ -50,7 +59,6 @@ function App() {
     <div id='app'>
       <div id='welcome-section'>
         <h1>Anime Max</h1>
-        <h3>Welcome to Anime Max! Please enter name of show or movie to access our vast library.</h3>
         {!selection && <SearchBar onSearch={setQuery} />}
       </div>
       <BrowserRouter>
