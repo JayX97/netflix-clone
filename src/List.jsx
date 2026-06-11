@@ -13,6 +13,7 @@ const List = ({ loading, error, list, onSelection }) => {// main page on Router 
       {listArray && listArray.map(anime => {
         return <Link to="/details" onClick={() => onSelection(anime)}>
           <Selection
+            key={anime.mal_id}
             imageUrl={anime.images.webp.image_url}
             title={anime.title}
             episodes={anime.episodes}
