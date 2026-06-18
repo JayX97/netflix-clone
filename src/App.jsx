@@ -53,7 +53,7 @@ function App() {
     fetchData();
 
     return () => ignore = true;
-  }, [query]);
+  }, [query, queryParam]);
 
   return (
     <div id='app'>

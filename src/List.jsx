@@ -15,7 +15,7 @@ const List = ({ loading, error, list, onSelection }) => {// main page on Router 
           <Selection
             key={anime.id}
             imageUrl={anime.attributes.posterImage.small}
-            title={anime.attributes.titles.en}
+            title={anime.attributes.canonicalTitle}
             episodes={anime.attributes.episodeCount}
             status={anime.attributes.status}
             score={anime.attributes.averageRating}
