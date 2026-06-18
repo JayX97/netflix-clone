@@ -16,9 +16,9 @@ function App() {
   }); // selection via anime object clicked in List component
   const [query, setQuery] = useState("");
 
-  const baseUrl = "https://api.jikan.moe/v4/anime"; // will use search input state variable as param query
-  const queryParam = query.trim() === "" ? `?order_by=${encodeURIComponent("popularity")}`
-                                        : `?q=${encodeURIComponent(query)}`;
+  const baseUrl = "https://kitsu.io/api/edge/anime?page[limit]=20"; // will use search input state variable as param query
+  const queryParam = query.trim() === "" ? `&sort=popularityRank`
+                                        : `&filter[text]=${encodeURIComponent(query)}`;
                                         
   // * PRESERVE SELECTION THROUGH REFRESH *
   useEffect(() => {

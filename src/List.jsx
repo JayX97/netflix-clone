@@ -13,14 +13,12 @@ const List = ({ loading, error, list, onSelection }) => {// main page on Router 
       {listArray && listArray.map(anime => {
         return <Link to="/details" onClick={() => onSelection(anime)}>
           <Selection
-            key={anime.mal_id}
-            imageUrl={anime.images.webp.image_url}
-            title={anime.title}
-            episodes={anime.episodes}
-            status={anime.status}
-            season={anime.season}
-            year={anime.year}
-            score={anime.score}
+            key={anime.id}
+            imageUrl={anime.attributes.posterImage.small}
+            title={anime.attributes.titles.en}
+            episodes={anime.attributes.episodeCount}
+            status={anime.attributes.status}
+            score={anime.attributes.averageRating}
           />
         </Link>;
       })}
