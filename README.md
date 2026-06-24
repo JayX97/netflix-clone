@@ -1,3 +1,5 @@
+DISCLAIMER: This personal project is only for markup/programming language practice and demonstration of skills using HTML/CSS, Javascript and React.js. This project only displays public and royalty-free information of shows/movies found on MyAnimeList database via the Kitsu API.
+
 App used to search for series/movies based on search query.
 
 API used for app will show Japanese animation (anime) series/movies.
@@ -10,15 +12,17 @@ Pages (using React Router for navigation of pages)
 2. Details - *information of selected show/movies determined by data fetched*
 
 UPDATE -> API used for app -> Kitsu API (filters each query to 20 entries per page), text in search bar will be used in query.
-NOTE: Jikan API was originally used for this project. However, support for the API has been discontinued on June 14th, 2026.
+NOTE: Jikan API was originally used for this project. However, support for the API has been discontinued as of June 14th, 2026.
 
 Fetch API to fetch data from Kitsu API with error handling (and using an ignore flag to ensure the app fetches once during strict mode).
 
 SearchBar component will render search bar used for fetching data via search query.
 
+Selection component will render individual anime selection and key details when rendered from the List component.
+
 List component will render loading and error states from fetch.
 
-Detail component will render anime selection from current selection state (resets state to null when navigating back to List component)
+Detail component will render anime selection from fetch using ID of selection (resets selection state to null when navigating back to List component).
 
 NOTES:
 

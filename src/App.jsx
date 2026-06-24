@@ -27,6 +27,7 @@ function App() {
           <Route path={`/${selection}-details`} element={<Details selectionId={selection} onReturn={setSelection} />} />
         </Routes>
       </BrowserRouter>
+      <footer>&copy2026 Jason Fernandez. All rights reserved.</footer>
     </div>
   )
 }
