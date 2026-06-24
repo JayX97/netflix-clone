@@ -53,19 +53,21 @@ const List = ({ onSelection }) => {// main page on Router containing default ani
   return (
     <div id='list'>
       <SearchBar query={query} onSearch={setQuery} />
-      {listArray && listArray.map(anime => {
-        return <Link to={`/${anime.id}-details`} onClick={() => onSelection(anime.id)}>
-          <Selection
-            key={anime.id}
-            imageUrl={anime.attributes.posterImage.small}
-            title={anime.attributes.canonicalTitle}
-            episodes={anime.attributes.episodeCount}
-            status={anime.attributes.status}
-            score={anime.attributes.averageRating}
-          />
-        </Link>;
-      })}
-      {(!listArray || listArray.length === 0) && <h3>No matches available.</h3>}
+      <div id='list-selections'>
+        {listArray && listArray.map(anime => {
+          return <Link to={`/${anime.id}-details`} onClick={() => onSelection(anime.id)}>
+            <Selection
+              key={anime.id}
+              imageUrl={anime.attributes.posterImage.small}
+              title={anime.attributes.canonicalTitle}
+              episodes={anime.attributes.episodeCount}
+              status={anime.attributes.status}
+              score={anime.attributes.averageRating}
+            />
+          </Link>;
+        })}
+        {(!listArray || listArray.length === 0) && <h3>No matches available.</h3>}
+      </div>
     </div>
   )
 }
