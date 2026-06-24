@@ -52,7 +52,7 @@ const List = ({ onSelection }) => {// main page on Router containing default ani
 
   return (
     <div id='list'>
-      <SearchBar onSearch={setQuery} />
+      <SearchBar query={query} onSearch={setQuery} />
       {listArray && listArray.map(anime => {
         return <Link to={`/${anime.id}-details`} onClick={() => onSelection(anime.id)}>
           <Selection
