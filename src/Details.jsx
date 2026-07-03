@@ -45,8 +45,8 @@ const Details = ({ selectionId, onReturn }) => {// page displaying selected anim
   
   console.log(animeData);
 
-  if (loading) return <h3>Loading...</h3>;
-  if (error) return <h3>{error}</h3>;
+  if (loading) return <h3 className="fetch-message">Loading...</h3>;
+  if (error) return <h3 className="fetch-message">{error}</h3>;
   
   return (
     <div className="selection-page">

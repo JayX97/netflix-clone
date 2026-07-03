@@ -4,6 +4,7 @@ body {
 }
 
 #root {
+  background-color: gray;
   display: flex;
   width: 100%;
   height: 100%;
@@ -11,36 +12,57 @@ body {
 }
 
 #app {
+  display: flex;
   width: 70%;
   max-width: 70%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fetch-message {
+  margin-top: 20px;
 }
 
 #welcome-section {
+  background-color: white;
   display: flex;
-  background-color: lightgray;
-  margin-bottom: 20px;
-  position: sticky;
-  top: 0;
+  font-size: 30px;
+  width: 800px;
+  padding: 20px 0 20px 0;
   justify-content: center;
 }
 
 #list {
   display: flex;
+  height: 720px;
   flex-direction: column;
+  align-items: center;
 }
 
 #search {
+  background-color: lightgray;
   display: flex;
+  width: 800px;
   margin-bottom: 30px;
+  padding: 20px 0 20px 0;
+  position: sticky;
+  top: 0px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#search h3 {
+  margin-bottom: 20px;
 }
 
 #list-selections {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  overflow: scroll;
+  min-height: 0;
   justify-content: center;
 }
 

@@ -47,8 +47,8 @@ const List = ({ onSelection }) => {// main page on Router containing default ani
   const listArray = animeList.data; // list.data is the main array containing anime series/movie objects from the JSON fetched
   console.log(listArray);
   
-  if (loading) return <h3>Loading...</h3>;
-  if (error) return <h3>{error}</h3>;
+  if (loading) return <h3 className="fetch-message">Loading...</h3>;
+  if (error) return <h3 className="fetch-message">{error}</h3>;
 
   return (
     <div id='list'>
