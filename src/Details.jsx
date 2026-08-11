@@ -55,7 +55,7 @@ const Details = ({ selectionId, onReturn }) => {// page displaying selected anim
           <img src={animeData.attributes.posterImage.small} alt={animeData.attributes.canonicalTitle} />
           <div className="selection-info">
             <h2>{animeData.attributes.canonicalTitle}</h2>
-            <button>Start Watching</button>
+            <button><span class="material-symbols-outlined">play_circle</span> Start Watching</button>
             <p>{animeData.attributes.synopsis}</p>
             <div className="misc-data">
               <p>Episodes: {animeData.attributes.episodeCount}</p>

@@ -19,7 +19,7 @@ function App() {
   return (
     <div id='app'>
       <div id='welcome-section'>
-        <h1>Anime Max</h1>
+        <h1>ANIME MAX</h1>
       </div>
       <BrowserRouter>
         <Routes>

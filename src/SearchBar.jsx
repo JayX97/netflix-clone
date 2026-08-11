@@ -10,14 +10,14 @@ const SearchBar = ({ query, onSearch }) => {
   
   return (
     <div id='search'>
-      <h3>Welcome to Anime Max! Please enter name of show or movie to access our vast library.</h3>
+      <h3>Welcome to ANIME MAX! Please enter name of show or movie to access our vast library.</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit"><span class="material-symbols-outlined">search</span></button>
       </form>
     </div>
   )
