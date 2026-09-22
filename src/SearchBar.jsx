@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-const SearchBar = ({ query, onSearch }) => {
+const SearchBar = ({ query, onSearch, resetPageCount }) => {
   const [input, setInput] = useState(query);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(input);
+    resetPageCount(1);
   }
   
   return (
