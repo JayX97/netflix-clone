@@ -1,5 +1,7 @@
 DISCLAIMER: This personal project is only for markup/programming language practice and demonstration of skills using HTML/CSS, Javascript and React.js. This project only displays public and royalty-free information of shows/movies found on MyAnimeList database via the Kitsu API.
 
+Current version --> v1.0
+
 App used to search for series/movies based on search query.
 
 API used for app will show Japanese animation (anime) series/movies.
@@ -23,6 +25,8 @@ Selection component will render individual anime selection and key details when 
 List component will render loading and error states from fetch.
 
 Detail component will render anime selection from fetch using ID of selection (resets selection state to null when navigating back to List component).
+
+PageSelector component will render div containing current page number, max number of pages based on current search query and functional buttons to change the page.
 
 NOTES:
 

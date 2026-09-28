@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
 
+@keyframes appearAndRise {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -109,6 +121,7 @@ body {
   justify-content: center;
   scrollbar-width: none; 
   -ms-overflow-style: none;
+  animation: appearAndRise 0.6s ease-out;
 }
 
 #list-selections::-webkit-scrollbar {
@@ -238,9 +251,10 @@ input[type=number]:focus {
   font-size: 18px;
   margin: 50px 0 35px 0;
   padding: 30px;
-  gap: 50px;
+  gap: 30px;
   border-radius: 20px;
   box-shadow: 0 5px 15px black;
+  animation: appearAndRise 0.6s ease-out;
 }
 
 .selection-info {
