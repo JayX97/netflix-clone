@@ -23,8 +23,8 @@ function App() {
       </div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<List onSelection={setSelection} />} />
-          <Route path={`/${selection}-details`} element={<Details selectionId={selection} onReturn={setSelection} />} />
+          <Route path="/netflix-clone" element={<List onSelection={setSelection} />} />
+          <Route path={`/netflix-clone/${selection}-details`} element={<Details selectionId={selection} onReturn={setSelection} />} />
         </Routes>
       </BrowserRouter>
       <footer>&copy;2026 Jason Fernandez. All rights reserved.</footer>

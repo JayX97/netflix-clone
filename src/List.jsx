@@ -67,7 +67,7 @@ const List = ({ onSelection }) => {// main page on Router containing default ani
       <SearchBar query={query} onSearch={setQuery} resetPageCount={setCurrentPage} />
       <div id='list-selections'>
         {listArray && listArray.map(anime => {
-          return <Link to={`/${anime.id}-details`} onClick={() => onSelection(anime.id)}>
+          return <Link to={`/netflix-clone/${anime.id}-details`} onClick={() => onSelection(anime.id)}>
             <Selection
               key={anime.id}
               imageUrl={anime.attributes.posterImage.small}

@@ -65,7 +65,7 @@ const Details = ({ selectionId, onReturn }) => {// page displaying selected anim
           </div>
         </div>
       }
-      <Link to="/" onClick={() => onReturn(null)}><h4>Back</h4></Link>
+      <Link to="/netflix-clone" onClick={() => onReturn(null)}><h4>Back</h4></Link>
     </div>
   )
 }
